@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  frontend:
+    build: /enroute-frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+  backend:
+    build: /enroute-backend
+    ports:
+      - 3001:3001
+    environment:
+      PORT: 3001
+      DATABASE_URL: "postgresql://enroute:geNBowzYGMan@postgres:5432/enroute_db?schema=public"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    volumes:
+      - data:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      DATABASE_HOST: 127.0.0.1
+      POSTGRES_USER: enroute
+      POSTGRES_PASSWORD: "geNBowzYGMan"
+      POSTGRES_DB: enroute_db
+volumes:
+  data:
