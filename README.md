@@ -52,6 +52,16 @@ insert into "Color" (id, name, multiplier, tolerance) values
 
 Finally, you can go to `http://localhost:3000` in your local computer browser and you will see the front-end application running there. It will have connection with the API running in `http://localhost:3001` and the API will have connection with the database running on `localhost:5432`
 
+### How to test the apps
+1. Go into the terminal of the front-end container with: `docker-compose exec frontend bash`
+2. Run the command to run the front-end tests: `npm run jest`
+3. Quit Jest process with the command: `q`
+4. Exit the front-end terminal with the command: `exit`
+5. Go into the terminal of the back-end container with: `docker-compose exec backend bash`
+6. Run the command to run the back-end tests: `npm run jest`
+7. Quit Jest process with the command: `q`
+8. Exit the front-end terminal with the command: `exit`
+
 ### How to stop and remove the applications
 1. Stop the three Docker containers with: `docker-compose down`
 2. Check the ids of the three Docker images (enroute-cesar-frontend, enroute-cesar-backend, and enroute-cesar-postgres) with: `docker images`
