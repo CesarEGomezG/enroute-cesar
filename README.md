@@ -58,3 +58,4 @@ Finally, you can go to `http://localhost:3000` in your local computer browser an
 3. Remove those images to free disk space with: `docker rmi {idOfFrontend} {idOfBackend} {idOfPostgres}` where `{idOf____}` are the ids of the three docker images obtained in the previous step
 
 ## How it looks
+![calculator](https://github.com/CesarEGomezG/enroute-cesar/assets/76894869/727f5d6c-0ebb-46ca-aba0-905ccee8624d)
