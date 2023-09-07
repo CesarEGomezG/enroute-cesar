@@ -4,8 +4,6 @@ services:
     build: /enroute-frontend
     ports:
       - 3000:3000
-    environment:
-      - API_URL="http://backend:3001"
     depends_on:
       - backend
   backend:
@@ -14,8 +12,6 @@ services:
       - 3001:3001
     environment:
       PORT: 3001
-      CLIENT_URL: "http://frontend:3000"
-      JEST_URL: "http://frontend"
       DATABASE_URL: "postgresql://enroute:geNBowzYGMan@postgres:5432/enroute_db?schema=public"
     depends_on:
       - postgres
